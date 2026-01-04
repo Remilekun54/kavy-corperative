@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import CoopRoom from './components/CoopRoom';
 import Marketplace from './components/Marketplace';
 import LandingPage from './pages/LandingPage';
+import Footer from './components/Footer';
 import { INITIAL_USER } from './constants';
 import { User } from './types';
 
@@ -27,7 +28,12 @@ const App: React.FC = () => {
   };
 
   if (currentPath === '#landing' || currentPath === '') {
-    return <LandingPage onGetStarted={handleGetStarted} />;
+    return (
+      <>
+        <LandingPage onGetStarted={handleGetStarted} />
+        <Footer />
+      </>
+    );
   }
 
   const renderContent = () => {
@@ -46,13 +52,19 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main className="md:ml-72 p-6 md:p-12 animate-in fade-in duration-700">
-        <div className="max-w-7xl mx-auto">
-          {renderContent()}
-        </div>
-      </main>
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+      <div className="flex-1 flex">
+        <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+        <main className="flex-1 md:ml-72 p-6 md:p-12 animate-in fade-in duration-700">
+          <div className="max-w-7xl mx-auto">
+            {renderContent()}
+          </div>
+        </main>
+      </div>
+      {/* Ensuring footer is pushed to the bottom but remains visible after content */}
+      <div className="md:ml-72">
+        <Footer />
+      </div>
     </div>
   );
 };

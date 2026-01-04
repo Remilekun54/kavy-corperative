@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-slate-900 text-white pt-16 pb-8 px-6 border-t border-slate-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div className="space-y-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.location.hash = '#landing'}>
             <div className="h-8 w-8 bg-lemon-400 rounded-lg flex items-center justify-center text-slate-900 shadow-lg shadow-lemon-400/20">
               <Zap size={18} />
             </div>
@@ -32,18 +32,18 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="font-bold text-lemon-400 mb-6 uppercase tracking-widest text-xs">Platform</h4>
           <ul className="space-y-4 text-sm text-slate-400">
-            <li><a href="#" className="hover:text-white transition-colors">Savings Pools</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Grant Marketplace</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Kavy Market</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Peer Vouching</a></li>
+            <li><a href="#thrift" className="hover:text-white transition-colors">Savings Pools</a></li>
+            <li><a href="#app" className="hover:text-white transition-colors">Grant Marketplace</a></li>
+            <li><a href="#app" className="hover:text-white transition-colors">Kavy Market</a></li>
+            <li><a href="#guilds" className="hover:text-white transition-colors">Guild Ecosystem</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-bold text-lemon-400 mb-6 uppercase tracking-widest text-xs">Company</h4>
           <ul className="space-y-4 text-sm text-slate-400">
-            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">The Coop Room</a></li>
+            <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Legal & Privacy</a></li>
           </ul>

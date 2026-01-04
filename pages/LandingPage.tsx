@@ -7,20 +7,65 @@ interface LandingPageProps {
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
+  const navigateToAbout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.hash = '#about';
+  };
+
+  const navigateToThrift = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.hash = '#thrift';
+  };
+
+  const navigateToGuilds = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.hash = '#guilds';
+  };
+
+  const navigateToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.hash = '#contact';
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center glass border-b border-slate-100">
         <div className="flex items-center gap-2">
            <div className="h-10 w-10 bg-lemon-400 rounded-xl flex items-center justify-center text-slate-900 shadow-xl shadow-lemon-100">
-             <Zap size={24} />
+             < Zap size={24} />
            </div>
            <span className="text-2xl font-black text-slate-900 tracking-tighter">KAVY</span>
         </div>
-        <div className="hidden md:flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
-          <a href="#features" className="hover:text-lemon-700">Features</a>
-          <a href="#thrift" className="hover:text-lemon-700">Thrift</a>
-          <a href="#guilds" className="hover:text-lemon-700">Guilds</a>
+        <div className="hidden md:flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest items-center">
+          <a 
+            href="#about" 
+            onClick={navigateToAbout}
+            className="hover:text-lemon-700 transition-colors"
+          >
+            About Us
+          </a>
+          <a 
+            href="#thrift" 
+            onClick={navigateToThrift}
+            className="hover:text-lemon-700 transition-colors"
+          >
+            Thrift
+          </a>
+          <a 
+            href="#guilds" 
+            onClick={navigateToGuilds}
+            className="hover:text-lemon-700 transition-colors"
+          >
+            Guilds
+          </a>
+          <a 
+            href="#contact" 
+            onClick={navigateToContact}
+            className="hover:text-lemon-700 transition-colors"
+          >
+            Contact
+          </a>
         </div>
         <button 
           onClick={onGetStarted}
@@ -79,7 +124,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
              <div className="flex items-center gap-3 font-black text-2xl text-slate-800"><Globe className="text-lemon-600" /> UNDP</div>
              <div className="flex items-center gap-3 font-black text-2xl text-slate-800"><Users className="text-lemon-600" /> LagosState</div>
-             <div className="flex items-center gap-3 font-black text-2xl text-slate-800"><Zap className="text-lemon-600" /> UNICEF</div>
+             <div className="flex items-center gap-3 font-black text-2xl text-slate-800">< Zap className="text-lemon-600" /> UNICEF</div>
              <div className="flex items-center gap-3 font-black text-2xl text-slate-800"><TrendingUp className="text-lemon-600" /> USAID</div>
           </div>
         </div>
@@ -177,12 +222,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
              <div className="relative z-10 space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:border-lemon-400 hover:bg-lemon-50 transition-all cursor-default group/card">
-                     <Award size={32} className="mb-4 text-slate-400 group-hover/card:text-lemon-600 transition-colors" />
+                     <Award size={32} className="mb-4 text-slate-400 group-hover:card:text-lemon-600 transition-colors" />
                      <h4 className="font-black text-slate-800 text-xl tracking-tight">Tailors Guild</h4>
                      <p className="text-xs text-slate-500 font-medium">840 Active Members</p>
                   </div>
                   <div className="mt-8 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:border-lemon-400 hover:bg-lemon-50 transition-all cursor-default group/card">
-                     <Layers size={32} className="mb-4 text-slate-400 group-hover/card:text-lemon-600 transition-colors" />
+                     <Layers size={32} className="mb-4 text-slate-400 group-hover:card:text-lemon-600 transition-colors" />
                      <h4 className="font-black text-slate-800 text-xl tracking-tight">Agro-Guild</h4>
                      <p className="text-xs text-slate-500 font-medium">1,200 Active Members</p>
                   </div>
@@ -229,7 +274,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               </div>
             </div>
             <button 
-              onClick={onGetStarted}
+              onClick={navigateToGuilds}
               className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-sm hover:bg-lemon-500 hover:text-slate-900 transition-all shadow-xl shadow-slate-200"
             >
               Find Your Guild

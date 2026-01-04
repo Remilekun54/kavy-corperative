@@ -1,0 +1,7 @@
+{
+  "name": "Kavy Cooperative",
+  "description": "A digital-first cooperative fintech platform empowering African entrepreneurs through social trust-based lending, grant matching, and bulk purchasing.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
